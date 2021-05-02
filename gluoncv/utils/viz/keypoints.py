@@ -126,9 +126,20 @@ def cv_plot_keypoints(img, coords, confidence, class_ids, bboxes, scores,
                    [5, 11], [6, 12], [11, 12],
                    [11, 13], [12, 14], [13, 15], [14, 16]]
 
+    # Set colors of bounding boxes 1...5 to be equal to this shade of blue
+    colors_dictionary = {
+        0: (52, 94, 235),
+        1: (52, 94, 235),
+        2: (52, 94, 235),
+        3: (52, 94, 235),
+        4: (52, 94, 235)
+    }
+
+
     person_ind = class_ids[0] == 0
     img = cv_plot_bbox(img, bboxes[0][person_ind[:, 0]], scores[0][person_ind[:, 0]],
-                       thresh=box_thresh, class_names='person', scale=scale, **kwargs)
+                       thresh=box_thresh, class_names='person', scale=scale,
+                       colors=colors_dictionary, **kwargs)
 
     colormap_index = np.linspace(0, 1, len(joint_pairs))
     coords *= scale
