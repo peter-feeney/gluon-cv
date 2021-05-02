@@ -107,9 +107,15 @@ def plot_bbox(img, bboxes, scores=None, labels=None, thresh=0.5,
                     bbox=dict(facecolor=colors[cls_id], alpha=0.5),
                     fontsize=fontsize, color='white')
     return ax
-
+colors_dictionary = {
+    0: (52, 94, 235),
+    1: (52, 94, 235),
+    2: (52, 94, 235),
+    3: (52, 94, 235),
+    4: (52, 94, 235)
+}
 def cv_plot_bbox(img, bboxes, scores=None, labels=None, thresh=0.5,
-                 class_names=None, colors=None,
+                 class_names=None, colors=colors_dictionary,
                  absolute_coordinates=True, scale=1.0, linewidth=2):
     """Visualize bounding boxes with OpenCV.
 
