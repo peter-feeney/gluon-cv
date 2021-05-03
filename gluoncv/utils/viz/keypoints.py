@@ -56,8 +56,19 @@ def plot_keypoints(img, coords, confidence, class_ids, bboxes, scores,
                    [11, 13], [12, 14], [13, 15], [14, 16]]
 
     person_ind = class_ids[0] == 0
+
+    # Set colors of bounding boxes 1...5 to be equal to this shade of blue
+    colors_dictionary = {
+        0: (52, 94, 235),
+        1: (52, 94, 235),
+        2: (52, 94, 235),
+        3: (52, 94, 235),
+        4: (52, 94, 235)
+    }
+
     ax = plot_bbox(img, bboxes[0][person_ind[:, 0]],
-                   scores[0][person_ind[:, 0]], thresh=box_thresh, **kwargs)
+                   scores[0][person_ind[:, 0]], thresh=box_thresh, 
+                   colors = colors_dictionary, **kwargs)
 
     colormap_index = np.linspace(0, 1, len(joint_pairs))
     for i in range(coords.shape[0]):
