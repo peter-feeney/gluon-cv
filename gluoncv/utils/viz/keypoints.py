@@ -59,11 +59,11 @@ def plot_keypoints(img, coords, confidence, class_ids, bboxes, scores,
 
     # Set colors of bounding boxes 1...5 to be equal to this shade of blue
     colors_dictionary = {
-        0: (52, 94, 235),
-        1: (52, 94, 235),
-        2: (52, 94, 235),
-        3: (52, 94, 235),
-        4: (52, 94, 235)
+        0: (52/255, 94/255, 235/255),
+        1: (52/255, 94/255, 235/255),
+        2: (52/255, 94/255, 235/255),
+        3: (52/255, 94/255, 235/255),
+        4: (52/255, 94/255, 235/255)
     }
 
     ax = plot_bbox(img, bboxes[0][person_ind[:, 0]],
