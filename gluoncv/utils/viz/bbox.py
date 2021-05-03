@@ -89,7 +89,7 @@ def plot_bbox(img, bboxes, scores=None, labels=None, thresh=0.5,
             if class_names is not None:
                 colors[cls_id] = plt.get_cmap('hsv')(cls_id / len(class_names))
             else:
-                colors[cls_id] = (random.random(), random.random(), random.random())
+                colors[cls_id] = colors[0]
         xmin, ymin, xmax, ymax = [int(x) for x in bbox]
         rect = plt.Rectangle((xmin, ymin), xmax - xmin,
                              ymax - ymin, fill=False,
