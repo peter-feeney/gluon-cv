@@ -66,9 +66,9 @@ def plot_keypoints(img, coords, confidence, class_ids, bboxes, scores,
         4: (52/255, 94/255, 235/255)
     }
 
-    ax = plot_bbox(img, bboxes[0][person_ind[:, 0]],
-                   scores[0][person_ind[:, 0]], thresh=box_thresh, 
-                   colors = colors_dictionary, **kwargs)
+    #ax = plot_bbox(img, bboxes[0][person_ind[:, 0]],
+    #               scores[0][person_ind[:, 0]], thresh=box_thresh, 
+    #               colors = colors_dictionary, **kwargs)
 
     colormap_index = np.linspace(0, 1, len(joint_pairs))
     for i in range(coords.shape[0]):
