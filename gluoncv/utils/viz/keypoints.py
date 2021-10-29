@@ -71,7 +71,7 @@ def plot_keypoints(img, coords, confidence, class_ids, bboxes, scores,
     #               scores[0][person_ind[:, 0]], thresh=box_thresh, 
     #               colors = colors_dictionary, **kwargs)
 
-    ax = plot_image(img, ax=ax, reverse_rgb=reverse_rgb)
+    ax = plot_image(img, ax=None, reverse_rgb=reverse_rgb)
     colormap_index = np.linspace(0, 1, len(joint_pairs))
     for i in range(coords.shape[0]):
         pts = coords[i]
